@@ -31,10 +31,9 @@
       display: grid;
       grid-template-rows: 1fr;
       overflow: hidden;
-      background:
-        linear-gradient(90deg, rgba(12, 24, 23, .63), rgba(12, 24, 23, .12) 65%, rgba(12, 24, 23, .36)),
-        linear-gradient(0deg, rgba(12, 24, 23, .57), transparent 45%),
-        url("imagen-restaurante.jpg") center / cover;
+      background: linear-gradient(125deg, #17201d, #29463b 38%, #b85e2d 72%, #17201d);
+      background-size: 300% 300%;
+      animation: backgroundShift 16s ease-in-out infinite;
     }
 
     .coming-soon::after {
@@ -132,6 +131,10 @@
     .footer p { margin: 0; }
     .footer p:last-child { color: rgba(255,255,255,.47); }
 
+    @keyframes backgroundShift {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
     @keyframes appear { from { opacity: 0; transform: translateY(14px) scale(.98); } to { opacity: 1; transform: none; } }
     @media (max-width: 560px) {
       .topbar, .footer { padding: 24px; }
